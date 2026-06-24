@@ -9,7 +9,7 @@ export function SkillBadge({ label }: SkillBadgeProps) {
     <motion.span
       whileHover={{ scale: 1.08, y: -4 }}
       transition={{ type: 'spring', stiffness: 320, damping: 18 }}
-      className="inline-flex rounded-full border border-white/10 bg-white/[0.055] px-4 py-2 text-sm font-medium text-mist shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl hover:border-cyan/45 hover:shadow-glow"
+      className="inline-flex rounded-full border border-[#0C0C0C]/30 bg-[#0C0C0C]/[0.04] px-4 py-2 text-xs font-black uppercase tracking-[-0.01em] text-[#0C0C0C] hover:bg-[#0C0C0C]/10"
     >
       {label}
     </motion.span>

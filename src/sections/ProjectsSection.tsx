@@ -8,7 +8,6 @@ const projects = [
     description:
       'Multi-robot fire detection and exploration system built with ROS2, SLAM, sensor fusion, autonomous navigation, and collaborative robotics.',
     technologies: ['ROS2', 'Gazebo', 'SLAM Toolbox', 'Python', 'OpenCV'],
-    accent: 'radial-gradient(circle at 30% 20%, rgba(59,130,246,0.42), transparent 34%), radial-gradient(circle at 70% 70%, rgba(168,85,247,0.38), transparent 38%)',
   },
   {
     title: 'ISODATA Classification App',
@@ -16,7 +15,6 @@ const projects = [
     description:
       'Interactive web platform for unsupervised classification using PCA, ISODATA clustering, FastAPI, and modern visualizations.',
     technologies: ['Python', 'Scikit-Learn', 'FastAPI', 'PCA', 'ISODATA'],
-    accent: 'radial-gradient(circle at 70% 20%, rgba(6,182,212,0.42), transparent 34%), radial-gradient(circle at 30% 80%, rgba(139,92,246,0.4), transparent 42%)',
   },
   {
     title: 'Smart Feed',
@@ -24,15 +22,14 @@ const projects = [
     description:
       'Hybrid recommendation system combining personalization, intelligent ranking, content analysis, and AI-driven recommendations.',
     technologies: ['Python', 'Machine Learning', 'Recommendation Systems', 'FastAPI'],
-    accent: 'radial-gradient(circle at 35% 35%, rgba(168,85,247,0.45), transparent 34%), radial-gradient(circle at 75% 60%, rgba(59,130,246,0.36), transparent 42%)',
   },
 ];
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="relative bg-ink px-5 py-28">
-      <SectionHeading title="PROJECTS" />
-      <div className="mx-auto mt-16 max-w-6xl">
+    <section id="projects" className="relative z-10 -mt-10 rounded-t-[40px] bg-[#0C0C0C] px-5 py-20 sm:-mt-12 sm:rounded-t-[50px] sm:px-8 sm:py-24 md:-mt-14 md:rounded-t-[60px] md:px-10 md:py-32">
+      <SectionHeading title="PROJECT" />
+      <div className="mx-auto mt-16 max-w-7xl">
         {projects.map((project, index) => (
           <ProjectCard key={project.title} index={index} {...project} />
         ))}

@@ -38,7 +38,8 @@ function Row({ reverse = false }: { reverse?: boolean }) {
 
 export function MarqueeSection() {
   return (
-    <section className="relative bg-ink py-16">
+    <section className="relative overflow-hidden border-b border-white/10 bg-[#070707] py-10">
+      <div className="absolute inset-0 section-grid opacity-50" />
       <Row />
       <Row reverse />
     </section>

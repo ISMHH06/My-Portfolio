@@ -9,11 +9,11 @@ type ContactButtonProps = {
 
 export function ContactButton({ children, href, variant = 'primary' }: ContactButtonProps) {
   const base =
-    'group inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-5 text-sm font-semibold uppercase tracking-[0.18em] transition duration-300';
+    'group inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-8 py-3 text-xs font-medium uppercase tracking-widest outline outline-2 outline-offset-[-3px] transition duration-300 sm:px-10 sm:py-3.5 sm:text-sm md:px-12 md:py-4 md:text-base';
   const styles =
     variant === 'primary'
-      ? 'bg-mist text-ink hover:bg-white hover:shadow-glow'
-      : 'border border-white/15 bg-white/[0.04] text-mist hover:border-cyan/50 hover:bg-white/[0.08]';
+      ? 'bg-[#D7E2EA] text-[#0C0C0C] outline-[#D7E2EA] hover:bg-white'
+      : 'border-2 border-[#D7E2EA] bg-transparent text-[#D7E2EA] outline-transparent hover:bg-[#D7E2EA]/10';
 
   return (
     <a href={href} className={`${base} ${styles}`}>

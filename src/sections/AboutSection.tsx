@@ -1,4 +1,4 @@
-import { Cpu, Network, Radar } from 'lucide-react';
+import { Box, Cpu, Network, Orbit } from 'lucide-react';
 import { AnimatedText } from '../components/AnimatedText';
 import { SectionHeading } from '../components/SectionHeading';
 
@@ -7,19 +7,22 @@ const copy =
 
 export function AboutSection() {
   return (
-    <section id="about" className="relative flex min-h-screen items-center overflow-hidden px-5 py-28">
-      <div className="absolute left-10 top-24 animate-drift text-blue/35">
-        <Network size={70} />
+    <section id="about" className="relative flex min-h-screen items-center overflow-hidden bg-[#0C0C0C] px-5 py-20 sm:px-8 md:px-10">
+      <div className="absolute left-[1%] top-[4%] animate-drift text-[#D7E2EA]/18 sm:left-[2%] md:left-[4%]">
+        <Orbit size={170} />
       </div>
-      <div className="absolute bottom-24 right-12 animate-drift text-fuchsia/35 [animation-delay:1.4s]">
-        <Cpu size={82} />
+      <div className="absolute bottom-[8%] left-[3%] animate-drift text-[#D7E2EA]/14 [animation-delay:1.2s] sm:left-[6%] md:left-[10%]">
+        <Network size={130} />
       </div>
-      <div className="absolute right-1/4 top-20 animate-drift text-cyan/30 [animation-delay:2.6s]">
-        <Radar size={52} />
+      <div className="absolute right-[1%] top-[4%] animate-drift text-[#D7E2EA]/16 [animation-delay:0.8s] sm:right-[2%] md:right-[4%]">
+        <Box size={170} />
+      </div>
+      <div className="absolute bottom-[8%] right-[3%] animate-drift text-[#D7E2EA]/16 [animation-delay:1.8s] sm:right-[6%] md:right-[10%]">
+        <Cpu size={160} />
       </div>
       <div className="mx-auto max-w-6xl text-center">
         <SectionHeading title="ABOUT ME" />
-        <AnimatedText className="mx-auto mt-12 max-w-5xl text-2xl font-light leading-[1.7] text-white/75 md:text-4xl" text={copy} />
+        <AnimatedText className="mx-auto mt-10 max-w-[760px] text-[clamp(1rem,2vw,1.35rem)] font-medium leading-relaxed text-[#D7E2EA]" text={copy} />
       </div>
     </section>
   );

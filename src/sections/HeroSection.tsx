@@ -1,90 +1,77 @@
 import { motion } from 'framer-motion';
 import { BrainCircuit, Send } from 'lucide-react';
-import avatar from '../assets/ismail-avatar.png';
-import { AISphere } from '../components/AISphere';
+import avatar from '../assets/file_00000000563871f4b645338602d60cff.png';
 import { ContactButton } from '../components/ContactButton';
 import { Magnet } from '../components/Magnet';
-import { Particles } from '../components/Particles';
 
 const nav = ['About', 'Skills', 'Projects', 'Contact'];
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section className="relative flex h-screen flex-col overflow-hidden bg-[#0C0C0C]">
       <div className="absolute inset-0 grid-bg" />
-      <div className="absolute -left-32 top-24 h-96 w-96 rounded-full bg-blue/20 blur-3xl" />
-      <div className="absolute -right-40 bottom-24 h-[30rem] w-[30rem] rounded-full bg-fuchsia/20 blur-3xl" />
-      <Particles />
-      <div className="absolute inset-0 opacity-80">
-        <AISphere />
-      </div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_56%,rgba(255,255,255,0.08),transparent_26%)]" />
 
-      <nav className="relative z-20 mx-auto flex max-w-7xl items-center justify-between px-5 py-7 md:px-8">
-        <a href="#" className="flex items-center gap-3 text-sm font-bold uppercase tracking-[0.24em] text-mist">
-          <BrainCircuit className="text-cyan" size={22} />
+      <motion.nav
+        className="relative z-20 flex items-center justify-between px-6 pt-6 text-sm font-medium uppercase tracking-wider text-[#D7E2EA] md:px-10 md:pt-8 md:text-lg lg:text-[1.4rem]"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        <a href="#" className="flex items-center gap-3 transition duration-200 hover:opacity-70">
+          <BrainCircuit className="text-[#D7E2EA]" size={22} />
           Ismail
         </a>
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="flex items-center gap-5 sm:gap-8 md:gap-10">
           {nav.map((item) => (
-            <a key={item} href={`#${item.toLowerCase()}`} className="text-xs font-semibold uppercase tracking-[0.28em] text-mist transition hover:opacity-70">
+            <a key={item} href={`#${item.toLowerCase()}`} className="text-[0.68rem] transition duration-200 hover:opacity-70 sm:text-sm md:text-base lg:text-[1.05rem]">
               {item}
             </a>
           ))}
         </div>
-      </nav>
+      </motion.nav>
 
-      <div className="relative z-10 mx-auto grid min-h-[calc(100vh-88px)] max-w-7xl items-center gap-10 px-5 pb-9 pt-3 md:grid-cols-[1fr_0.92fr] md:px-8">
-        <div>
-          <motion.p
-            className="mb-5 text-sm font-semibold uppercase tracking-[0.32em] text-cyan"
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-          >
-            AI & Data Science Student
-          </motion.p>
-          <motion.h1
-            className="hero-heading max-w-4xl text-6xl font-black leading-[0.9] md:text-8xl lg:text-9xl"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-          >
-            Hi, I'm Ismail Hirich
-          </motion.h1>
-          <motion.p
-            className="mt-7 max-w-2xl text-xl font-light leading-9 text-white/72 md:text-2xl"
-            initial={{ opacity: 0, y: 26 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.24 }}
-          >
-            Building Intelligent Applications, Machine Learning Systems, Robotics Solutions, and AI-Powered Experiences.
-          </motion.p>
-        </div>
+      <motion.div
+        className="relative z-10 mt-6 overflow-hidden sm:mt-4 md:-mt-5"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        <h1 className="hero-heading w-full whitespace-nowrap text-[13.8vw] font-black uppercase leading-none tracking-tight sm:text-[14.5vw] md:text-[15.5vw] lg:text-[16.4vw]">
+          Hi, I'm Ismail
+        </h1>
+      </motion.div>
 
-        <motion.div
-          className="relative mx-auto flex aspect-square w-full max-w-[500px] items-center justify-center"
-          animate={{ y: [-12, 12, -12] }}
-          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+      <motion.div
+        className="absolute left-1/2 top-[56%] z-10 w-[280px] -translate-x-1/2 -translate-y-1/2 sm:-bottom-14 sm:top-auto sm:w-[360px] sm:translate-y-0 md:-bottom-20 md:w-[440px] lg:-bottom-24 lg:w-[520px]"
+        initial={{ opacity: 0, y: 30, x: '-50%' }}
+        animate={{ opacity: 1, y: 0, x: '-50%' }}
+        transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        <Magnet className="relative z-10">
+          <img
+            src={avatar}
+            alt="Stylized avatar of Ismail Hirich"
+            className="w-full object-contain drop-shadow-[0_42px_80px_rgba(0,0,0,0.78)]"
+          />
+        </Magnet>
+      </motion.div>
+
+      <div className="relative z-20 mt-auto flex items-end justify-between px-6 pb-7 sm:pb-8 md:px-10 md:pb-10">
+        <motion.p
+          className="max-w-[180px] text-[clamp(0.75rem,1.4vw,1.5rem)] font-light uppercase leading-snug tracking-wide text-[#D7E2EA] sm:max-w-[260px]"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          <div className="absolute inset-7 rounded-full bg-[radial-gradient(circle,rgba(59,130,246,0.25),rgba(147,51,234,0.20),transparent_68%)] blur-xl" />
-          <Magnet className="relative z-10 rounded-full">
-            <img
-              src={avatar}
-              alt="Stylized avatar of Ismail Hirich"
-              className="aspect-square w-[min(78vw,420px)] rounded-full object-cover shadow-[0_35px_100px_rgba(0,0,0,0.65)] ring-1 ring-white/10"
-            />
-          </Magnet>
-        </motion.div>
-      </div>
-
-      <div className="relative z-20 mx-auto -mt-24 flex max-w-7xl flex-col gap-5 px-5 pb-8 md:flex-row md:items-end md:justify-between md:px-8">
-        <p className="max-w-xl text-sm font-light leading-7 text-white/62 md:text-base">
           Passionate about Artificial Intelligence, Machine Learning, Data Science, and Intelligent Robotics.
-        </p>
-        <ContactButton href="#contact">
-          <Send size={16} />
-          Contact
-        </ContactButton>
+        </motion.p>
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}>
+          <ContactButton href="#contact">
+            <Send size={16} />
+            Contact
+          </ContactButton>
+        </motion.div>
       </div>
     </section>
   );

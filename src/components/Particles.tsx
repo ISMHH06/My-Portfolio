@@ -14,7 +14,7 @@ export function Particles() {
       {particles.map((particle) => (
         <motion.span
           key={particle.id}
-          className="absolute h-1 w-1 rounded-full bg-cyan/70 shadow-[0_0_14px_rgba(6,182,212,0.8)]"
+          className="absolute h-1 w-1 rounded-full bg-[#D7E2EA]/55 shadow-[0_0_12px_rgba(215,226,234,0.45)]"
           style={{ left: particle.left, top: particle.top }}
           animate={{ y: [-18, 18, -18], opacity: [0.15, 0.85, 0.15], scale: [0.7, 1.4, 0.7] }}
           transition={{ duration: particle.duration, delay: particle.delay, repeat: Infinity, ease: 'easeInOut' }}

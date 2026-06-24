@@ -10,14 +10,10 @@ export default {
       colors: {
         ink: '#0C0C0C',
         mist: '#D7E2EA',
-        blue: '#3B82F6',
-        violet: '#8B5CF6',
-        fuchsia: '#A855F7',
-        cyan: '#06B6D4',
+        steel: '#646973',
       },
       boxShadow: {
-        glow: '0 0 45px rgba(59, 130, 246, 0.28)',
-        violet: '0 0 55px rgba(168, 85, 247, 0.22)',
+        glow: '0 0 45px rgba(215, 226, 234, 0.18)',
       },
       keyframes: {
         marqueeRight: {

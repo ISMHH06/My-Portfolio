@@ -53,7 +53,7 @@ function Nodes() {
           <bufferGeometry>
             <bufferAttribute attach="attributes-position" count={linePositions.length / 3} array={linePositions} itemSize={3} />
           </bufferGeometry>
-          <lineBasicMaterial color="#8B5CF6" transparent opacity={0.22} blending={THREE.AdditiveBlending} />
+          <lineBasicMaterial color="#D7E2EA" transparent opacity={0.16} blending={THREE.AdditiveBlending} />
         </lineSegments>
       </group>
     </Float>
@@ -64,8 +64,8 @@ export function AISphere() {
   return (
     <Canvas camera={{ position: [0, 0, 6.2], fov: 42 }} dpr={[1, 1.7]} gl={{ antialias: true, alpha: true }}>
       <ambientLight intensity={0.6} />
-      <pointLight position={[3, 2, 4]} intensity={10} color="#3B82F6" />
-      <pointLight position={[-3, -1, 2]} intensity={8} color="#A855F7" />
+      <pointLight position={[3, 2, 4]} intensity={8} color="#D7E2EA" />
+      <pointLight position={[-3, -1, 2]} intensity={5} color="#FFFFFF" />
       <Nodes />
     </Canvas>
   );
