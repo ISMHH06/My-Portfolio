@@ -31,12 +31,12 @@ export function AnimatedText({ text, className }: AnimatedTextProps) {
           {word.split('').map((char, charIndex) => (
             <motion.span
               key={`${char}-${wordIndex}-${charIndex}`}
-              className="inline-block"
+              className="inline-block will-change-transform"
               variants={{
-                hidden: { opacity: 0.12, y: 16, filter: 'blur(6px)' },
-                visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
+                hidden: { opacity: 0.18, y: 10 },
+                visible: { opacity: 1, y: 0 },
               }}
-              transition={{ duration: 0.78, ease: 'easeOut' }}
+              transition={{ duration: 0.62, ease: [0.25, 0.1, 0.25, 1] }}
             >
               {char}
             </motion.span>

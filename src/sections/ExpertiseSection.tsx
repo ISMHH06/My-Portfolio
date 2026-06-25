@@ -2,11 +2,11 @@ import { FadeIn } from '../components/FadeIn';
 import { SectionHeading } from '../components/SectionHeading';
 
 const items = [
+  ['Data Science', 'Data preprocessing, visualization, feature engineering, clustering, and analytical modeling.'],
   ['Machine Learning', 'Designing and training machine learning models for classification, clustering, and prediction tasks.'],
   ['Computer Vision', 'Building vision systems using OpenCV, TensorFlow, PyTorch, and modern deep learning techniques.'],
   ['AI Web Applications', 'Developing intelligent applications using React, FastAPI, and AI-powered backends.'],
   ['Robotics & ROS2', 'Creating autonomous robotics solutions, multi-robot coordination systems, and intelligent exploration frameworks.'],
-  ['Data Science', 'Data preprocessing, visualization, feature engineering, clustering, and analytical modeling.'],
 ];
 
 export function ExpertiseSection() {

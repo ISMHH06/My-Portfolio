@@ -40,7 +40,7 @@ a {
 }
 
 .jack-title {
-  color: #dce4ec;
+  color: #636363c4;
   font-weight: 900;
   letter-spacing: -0.035em;
   line-height: 0.82;
@@ -55,6 +55,14 @@ a {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.section-steel-title {
+  color: #636363c4;
+  letter-spacing: 0.025em;
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.22),
+    0 18px 44px rgba(0, 0, 0, 0.72);
 }
 
 .grid-bg {
