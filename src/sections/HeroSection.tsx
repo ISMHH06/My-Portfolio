@@ -43,7 +43,7 @@ export function HeroSection() {
       </motion.div>
 
       <motion.div
-        className="absolute left-1/2 top-[56%] z-10 w-[280px] -translate-x-1/2 -translate-y-1/2 sm:-bottom-14 sm:top-auto sm:w-[360px] sm:translate-y-0 md:-bottom-20 md:w-[440px] lg:-bottom-24 lg:w-[520px]"
+        className="absolute left-1/2 top-[56%] z-10 w-[280px] -translate-x-1/2 -translate-y-1/2 sm:-bottom-28 sm:top-auto sm:w-[360px] sm:translate-y-0 md:-bottom-36 md:w-[440px] lg:-bottom-48 lg:w-[520px]"
         initial={{ opacity: 0, y: 30, x: '-50%' }}
         animate={{ opacity: 1, y: 0, x: '-50%' }}
         transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}

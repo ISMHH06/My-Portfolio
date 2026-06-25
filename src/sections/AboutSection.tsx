@@ -22,7 +22,7 @@ export function AboutSection() {
       </div>
       <div className="mx-auto max-w-6xl text-center">
         <SectionHeading title="ABOUT ME" />
-        <AnimatedText className="mx-auto mt-10 max-w-[760px] text-[clamp(1rem,2vw,1.35rem)] font-medium leading-relaxed text-[#D7E2EA]" text={copy} />
+        <AnimatedText className="mx-auto mt-10 max-w-[820px] text-balance text-[clamp(1rem,1.75vw,1.35rem)] font-medium leading-[1.75] text-[#D7E2EA]" text={copy} />
       </div>
     </section>
   );
