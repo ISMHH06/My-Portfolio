@@ -179,3 +179,11 @@ a {
 .project-visual-tall {
   min-height: clamp(160px, 22vw, 340px);
 }
+
+.architecture-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(215, 226, 234, 0.24);
+  border-radius: clamp(2.5rem, 5vw, 3.75rem);
+  background: #050505;
+}

@@ -8,9 +8,11 @@ type ProjectCardProps = {
   category: string;
   description: string;
   technologies: string[];
+  architectureImage: string;
+  previewImage: string;
 };
 
-export function ProjectCard({ index, title, category, description, technologies }: ProjectCardProps) {
+export function ProjectCard({ index, title, category, description, technologies, architectureImage, previewImage }: ProjectCardProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
   const scale = useTransform(scrollYProgress, [0, 0.45, 1], [0.94, 1, 0.92]);
@@ -37,17 +39,30 @@ export function ProjectCard({ index, title, category, description, technologies 
             Live Project
           </a>
         </div>
-        <div className="grid min-h-0 flex-1 gap-3 md:grid-cols-[0.4fr_0.6fr]">
-          <div className="grid min-h-0 grid-rows-[0.42fr_0.58fr] gap-3">
-            <div className="project-visual min-h-0">
-              <span>{technologies[0]}</span>
-            </div>
-            <div className="project-visual min-h-0">
-              <span>{technologies[1]}</span>
-            </div>
+        <div className="flex min-h-0 flex-1 flex-col gap-4">
+          <div className="mx-auto flex max-w-5xl flex-wrap justify-center gap-2.5">
+            {technologies.map((technology) => (
+              <span
+                key={technology}
+                className="rounded-full border border-[#D7E2EA]/30 px-3 py-1.5 text-xs font-black uppercase tracking-[0.12em] text-[#D7E2EA]/80 transition duration-200 hover:border-[#D7E2EA]/70 hover:bg-[#D7E2EA]/10 hover:text-[#D7E2EA]"
+              >
+                {technology}
+              </span>
+            ))}
           </div>
-          <div className="project-visual min-h-0">
-            <span>{technologies.slice(2).join(' / ')}</span>
+          <div className="architecture-card group mx-auto h-[clamp(240px,34vh,360px)] w-full max-w-[1180px]">
+            <img
+              src={architectureImage}
+              alt={`${title} architecture`}
+              className="absolute inset-0 h-full w-full scale-100 object-contain opacity-100 transition duration-500 ease-out group-hover:scale-[1.025] group-hover:opacity-0"
+              loading="lazy"
+            />
+            <img
+              src={previewImage}
+              alt={`${title} showcase`}
+              className="absolute inset-0 h-full w-full scale-[1.025] object-contain opacity-0 transition duration-500 ease-out group-hover:scale-100 group-hover:opacity-100"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>

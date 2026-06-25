@@ -1,5 +1,11 @@
 import { ProjectCard } from '../components/ProjectCard';
 import { SectionHeading } from '../components/SectionHeading';
+import fireScoutArchitecture from '../assets/FireScout/Fire_Scout_Architecture.png';
+import fireScoutPreview from '../assets/FireScout/Hover_Image.jpeg';
+import isodataArchitecture from '../assets/ISODATA/ISODATA_Architecture.png';
+import isodataPreview from '../assets/ISODATA/ISODATA_Hover.png';
+import smartFeedArchitecture from '../assets/SmartFeed/Smart_Feed_Architecture.png';
+import smartFeedPreview from '../assets/SmartFeed/Smart_Feed_Hover.png';
 
 const projects = [
   {
@@ -7,21 +13,27 @@ const projects = [
     category: 'ROS2 Robotics',
     description:
       'Multi-robot fire detection and exploration system built with ROS2, SLAM, sensor fusion, autonomous navigation, and collaborative robotics.',
-    technologies: ['ROS2', 'Gazebo', 'SLAM Toolbox', 'Python', 'OpenCV'],
+    technologies: ['ROS2', 'Gazebo', 'SLAM', 'Navigation2', 'RViz', 'OpenCV', 'Python', 'C++', 'Sensor Fusion', 'Multi-Robot Systems'],
+    architectureImage: fireScoutArchitecture,
+    previewImage: fireScoutPreview,
   },
   {
     title: 'ISODATA Classification App',
     category: 'Machine Learning',
     description:
       'Interactive web platform for unsupervised classification using PCA, ISODATA clustering, FastAPI, and modern visualizations.',
-    technologies: ['Python', 'Scikit-Learn', 'FastAPI', 'PCA', 'ISODATA'],
+    technologies: ['Python', 'Pandas', 'NumPy', 'Scikit-Learn', 'PCA', 'ISODATA', 'FastAPI', 'Matplotlib', 'Plotly', 'Machine Learning'],
+    architectureImage: isodataArchitecture,
+    previewImage: isodataPreview,
   },
   {
     title: 'Smart Feed',
     category: 'Artificial Intelligence',
     description:
       'Hybrid recommendation system combining personalization, intelligent ranking, content analysis, and AI-driven recommendations.',
-    technologies: ['Python', 'Machine Learning', 'Recommendation Systems', 'FastAPI'],
+    technologies: ['Python', 'FastAPI', 'SBERT', 'DistilBERT', 'CLIP', 'VideoMAE', 'FAISS', 'ALS', 'Firebase', 'Recommendation Systems'],
+    architectureImage: smartFeedArchitecture,
+    previewImage: smartFeedPreview,
   },
 ];
 
