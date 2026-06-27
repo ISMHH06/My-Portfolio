@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { AboutSection } from './sections/AboutSection';
+import AcademicPipeline from './sections/AcademicPipeline';
 import { ContactSection } from './sections/ContactSection';
 import { ExpertiseSection } from './sections/ExpertiseSection';
 import { HeroSection } from './sections/HeroSection';
@@ -18,6 +19,7 @@ export default function App() {
       <HeroSection />
       <MarqueeSection />
       <AboutSection />
+      <AcademicPipeline />
       <SkillsSection />
       <ExpertiseSection />
       <ProjectsSection />

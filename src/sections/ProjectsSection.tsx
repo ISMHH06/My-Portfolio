@@ -1,39 +1,56 @@
 import { ProjectCard } from '../components/ProjectCard';
 import { SectionHeading } from '../components/SectionHeading';
-import fireScoutArchitecture from '../assets/FireScout/Fire_Scout_Architecture.png';
-import fireScoutPreview from '../assets/FireScout/Hover_Image.jpeg';
-import isodataArchitecture from '../assets/ISODATA/ISODATA_Architecture.png';
-import isodataPreview from '../assets/ISODATA/ISODATA_Hover.png';
-import smartFeedArchitecture from '../assets/SmartFeed/Smart_Feed_Architecture.png';
-import smartFeedPreview from '../assets/SmartFeed/Smart_Feed_Hover.png';
 
 const projects = [
-  {
-    title: 'Fire-Scout',
-    category: 'ROS2 Robotics',
-    description:
-      'Multi-robot fire detection and exploration system built with ROS2, SLAM, sensor fusion, autonomous navigation, and collaborative robotics.',
-    technologies: ['ROS2', 'Gazebo', 'SLAM', 'Navigation2', 'RViz', 'OpenCV', 'Python', 'C++', 'Sensor Fusion', 'Multi-Robot Systems'],
-    architectureImage: fireScoutArchitecture,
-    previewImage: fireScoutPreview,
-  },
-  {
-    title: 'ISODATA Classification App',
-    category: 'Machine Learning',
-    description:
-      'Interactive web platform for unsupervised classification using PCA, ISODATA clustering, FastAPI, and modern visualizations.',
-    technologies: ['Python', 'Pandas', 'NumPy', 'Scikit-Learn', 'PCA', 'ISODATA', 'FastAPI', 'Matplotlib', 'Plotly', 'Machine Learning'],
-    architectureImage: isodataArchitecture,
-    previewImage: isodataPreview,
-  },
   {
     title: 'Smart Feed',
     category: 'Artificial Intelligence',
     description:
       'Hybrid recommendation system combining personalization, intelligent ranking, content analysis, and AI-driven recommendations.',
-    technologies: ['Python', 'FastAPI', 'SBERT', 'DistilBERT', 'CLIP', 'VideoMAE', 'FAISS', 'ALS', 'Firebase', 'Recommendation Systems'],
-    architectureImage: smartFeedArchitecture,
-    previewImage: smartFeedPreview,
+    technologies: ['Python', 'FastAPI', 'SBERT', 'DistilBERT', 'CLIP', 'VideoMAE', 'FAISS', 'ALS', 'Firebase'],
+    githubUrl: 'https://github.com/ISMHH06/smart-feed',
+    architecture: [
+      { title: 'CONTENT SOURCES', detail: 'HuffPost • Reddit • MS-COCO' },
+      { title: 'AI UNDERSTANDING', detail: 'SBERT • CLIP • VideoMAE' },
+      { title: 'USER PROFILING', detail: 'Interaction Embeddings' },
+      { title: 'HYBRID RANKING', detail: 'Collaborative ALS + FAISS' },
+      { title: 'TOXICITY FILTER', detail: 'Detoxify Guardrails' },
+      { title: 'PERSONALIZED FEED', detail: 'Top-N Recommendations' },
+    ],
+  },
+  {
+    title: 'Fire-Scout',
+    category: 'ROS2 Robotics',
+    description:
+      'Multi-robot fire detection and exploration system built with ROS2, SLAM, sensor fusion, autonomous navigation, and collaborative robotics.',
+    technologies: ['ROS2', 'Gazebo', 'SLAM', 'RViz', 'OpenCV', 'Python', 'C++', 'Sensor Fusion', 'Multi-Robot Systems'],
+    githubUrl: 'https://github.com/ISMHH06/Fire-Scout',
+    architecture: [
+      { title: 'GAZEBO SIMULATION', detail: 'Villa World + Fire Entities' },
+      { title: '3x TURTLEBOT3 ROBOTS', detail: 'Parallel SLAM Toolbox Nodes' },
+      { title: 'MULTI-ROBOT MAP MERGING', detail: 'ORB Map Merging Node' },
+      { title: 'AUCTION-BASED EXPLORATION', detail: 'Frontier & Task Allocation' },
+      { title: 'FIRE DETECTION PIPELINE', detail: 'Hybrid Sensor + Vision' },
+      { title: 'INCIDENT COORDINATION', detail: 'Closest Robot Assignment' },
+      { title: 'FIRE SUPPRESSION', detail: 'Action Execution Node' },
+    ],
+  },
+  {
+    title: 'ISODATA Classification',
+    category: 'Machine Learning',
+    description:
+      'Interactive web platform for unsupervised classification using PCA, ISODATA clustering, FastAPI, and modern visualizations.',
+    technologies: ['Python', 'Pandas', 'NumPy', 'Scikit-Learn', 'ISODATA', 'FastAPI', 'Matplotlib', 'Plotly'],
+    githubUrl: 'https://github.com/ISMHH06/ISODATA-Classification-App',
+    architecture: [
+      { title: 'CREDIT CARD DATASET', detail: 'Raw Transaction Logs' },
+      { title: 'DATA CLEANING', detail: 'Imputation & Winsorization' },
+      { title: 'FEATURE ENGINEERING', detail: 'Behavioral Ratios' },
+      { title: 'STANDARD SCALING', detail: 'Z-score Normalization' },
+      { title: 'PCA REDUCTION', detail: '11D Vector Space' },
+      { title: 'ISODATA ALGORITHM', detail: 'Dynamic Split / Merge' },
+      { title: 'CUSTOMER SEGMENTS', detail: 'Target Personas' },
+    ],
   },
 ];
 
