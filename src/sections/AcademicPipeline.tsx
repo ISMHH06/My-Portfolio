@@ -52,8 +52,8 @@ export default function AcademicPipeline() {
   ];
 
   return (
-    <section ref={containerRef} className="relative h-[350vh] bg-[#0C0C0C]">
-      <div className="sticky top-0 flex h-screen w-full flex-col justify-center overflow-hidden px-5 py-12 pb-20 sm:px-8 md:px-10">
+    <section ref={containerRef} className="relative h-auto bg-[#0C0C0C] md:h-[350vh]">
+      <div className="relative top-0 flex h-auto w-full flex-col justify-center overflow-hidden px-5 py-12 pb-20 sm:px-8 md:sticky md:h-screen">
         <SectionHeading title="ACADEMIC PIPELINE" />
 
         <div className="relative mx-auto mt-8 w-full max-w-5xl sm:mt-12 md:mt-16">
@@ -76,7 +76,14 @@ export default function AcademicPipeline() {
               const isLeft = item.side === 'left';
 
               return (
-                <div key={item.year} className="relative">
+                <div key={item.year} className="relative flex flex-col gap-2 md:block">
+                  {/* Mobile year label */}
+                  <div className="pl-10 md:hidden">
+                    <span className="text-3xl font-black tracking-tight text-white">
+                      {item.year}
+                    </span>
+                  </div>
+
                   {/* Desktop layout */}
                   <div className="hidden md:grid grid-cols-[1fr_auto_1fr] items-center">
                     {isLeft ? (
@@ -110,14 +117,16 @@ export default function AcademicPipeline() {
                     )}
                   </div>
 
-                  {/* Mobile layout */}
-                  <div className="flex items-start gap-4 md:hidden">
+                  {/* Mobile card + dot */}
+                  <div className="flex w-full items-start gap-4 md:hidden">
                     <div className="relative z-10 mt-1 flex shrink-0">
                       <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#0C0C0C] ring-2 ring-white/40">
                         <div className="h-2 w-2 rounded-full bg-white/80" />
                       </div>
                     </div>
-                    <Card item={item} style={{ opacity: cardOpacity[index], y: cardY[index] }} />
+                    <div className="w-full">
+                      <Card item={item} style={{ opacity: cardOpacity[index], y: cardY[index] }} />
+                    </div>
                   </div>
                 </div>
               );

@@ -12,7 +12,7 @@ type ContactButtonProps = {
 
 export function ContactButton({ children, href, variant = 'primary', target, rel }: ContactButtonProps) {
   const base =
-    'group inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-8 py-3 text-xs font-medium uppercase tracking-widest outline outline-2 outline-offset-[-3px] sm:px-10 sm:py-3.5 sm:text-sm md:px-12 md:py-4 md:text-base';
+    'group flex w-full min-h-12 items-center justify-center gap-2 rounded-full px-8 py-3 text-xs font-medium uppercase tracking-widest outline outline-2 outline-offset-[-3px] sm:w-auto sm:inline-flex sm:px-10 sm:py-3.5 sm:text-sm md:px-12 md:py-4 md:text-base';
   const styles =
     variant === 'primary'
       ? 'bg-[#D7E2EA] text-[#0C0C0C] outline-[#D7E2EA] hover:bg-white'

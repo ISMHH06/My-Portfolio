@@ -63,7 +63,7 @@ export function ProjectCard({ index, title, category, description, technologies,
         </div>
 
         <div className="border-t border-white/5 pt-10 mt-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {architecture.map((node, nodeIndex) => {
               const lastIndex = architecture.length - 1;
               const isLast = nodeIndex === lastIndex;
@@ -102,8 +102,8 @@ export function ProjectCard({ index, title, category, description, technologies,
 
               return (
                 <div key={node.title} className="flex items-center gap-3">
-                  {nodeIndex % 4 !== 0 && (
-                    <ArrowRight size={20} className="hidden lg:block shrink-0 text-white/30" />
+                  {nodeIndex > 0 && (
+                    <ArrowRight size={20} className="hidden sm:block shrink-0 text-white/30" />
                   )}
                   <div
                     className={`flex-1 min-w-0 rounded-xl border ${border} ${bg} ${shadow} px-5 py-4 text-center transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:brightness-125`}

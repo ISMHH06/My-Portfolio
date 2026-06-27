@@ -37,7 +37,7 @@ export function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        <h1 className="hero-heading w-full whitespace-nowrap px-2 text-[8.9vw] font-black uppercase leading-none tracking-tight sm:text-[9.5vw] md:text-[10.08vw] lg:text-[10.5vw]">
+        <h1 className="hero-heading w-full break-words px-2 text-5xl font-black uppercase leading-none tracking-tight sm:text-6xl sm:whitespace-nowrap md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[10rem]">
           Hi, I'm Ismail Hirich
         </h1>
       </motion.div>
@@ -57,9 +57,9 @@ export function HeroSection() {
         </Magnet>
       </motion.div>
 
-      <div className="relative z-20 mt-auto flex items-end justify-between px-6 pb-7 sm:pb-8 md:px-10 md:pb-10">
+      <div className="relative z-20 mt-auto flex flex-col items-center justify-end gap-4 px-6 pb-7 sm:flex-row sm:items-end sm:justify-between sm:pb-8 md:px-10 md:pb-10">
         <motion.p
-          className="max-w-[180px] text-[clamp(0.75rem,1.4vw,1.5rem)] font-light uppercase leading-snug tracking-wide text-[#D7E2EA] sm:max-w-[260px]"
+          className="text-[clamp(0.75rem,1.4vw,1.5rem)] font-light uppercase leading-snug tracking-wide text-[#D7E2EA] max-w-[260px]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
