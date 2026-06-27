@@ -34,87 +34,95 @@ export default function AcademicPipeline() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ['start end', 'end center'],
+    offset: ['start start', 'end end'],
   });
+
   const lineHeight = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
 
   const cardOpacity = [
-    useTransform(scrollYProgress, [0.08, 0.22], [0, 1]),
-    useTransform(scrollYProgress, [0.35, 0.5], [0, 1]),
-    useTransform(scrollYProgress, [0.62, 0.78], [0, 1]),
+    useTransform(scrollYProgress, [0.1, 0.3], [0, 1]),
+    useTransform(scrollYProgress, [0.45, 0.65], [0, 1]),
+    useTransform(scrollYProgress, [0.75, 0.85], [0, 1]),
   ];
 
   const cardY = [
-    useTransform(scrollYProgress, [0.08, 0.22], [30, 0]),
-    useTransform(scrollYProgress, [0.35, 0.5], [30, 0]),
-    useTransform(scrollYProgress, [0.62, 0.78], [30, 0]),
+    useTransform(scrollYProgress, [0.1, 0.3], [30, 0]),
+    useTransform(scrollYProgress, [0.45, 0.65], [30, 0]),
+    useTransform(scrollYProgress, [0.75, 0.85], [30, 0]),
   ];
 
   return (
-    <section
-      ref={containerRef}
-      className="relative overflow-hidden bg-[#0C0C0C] px-5 py-20 sm:px-8 sm:py-24 md:px-10 md:py-32"
-    >
-      <SectionHeading title="ACADEMIC PIPELINE" />
+    <section ref={containerRef} className="relative h-[350vh] bg-[#0C0C0C]">
+      <div className="sticky top-0 flex h-screen w-full flex-col justify-center overflow-hidden px-5 py-12 pb-20 sm:px-8 md:px-10">
+        <SectionHeading title="ACADEMIC PIPELINE" />
 
-      <div className="relative mx-auto mt-16 max-w-4xl sm:mt-20 md:mt-28">
-        <div className="absolute left-1/2 top-0 hidden h-full w-0.5 -translate-x-1/2 bg-white/10 md:block" />
-        <motion.div
-          className="absolute left-1/2 top-0 hidden w-0.5 -translate-x-1/2 bg-gradient-to-b from-cyan-400/60 to-emerald-400/60 md:block"
-          style={{ height: lineHeight }}
-        />
+        <div className="relative mx-auto mt-8 w-full max-w-5xl sm:mt-12 md:mt-16">
+          {/* Desktop center line */}
+          <div className="absolute left-1/2 top-0 hidden h-full w-0.5 -translate-x-1/2 bg-white/10 md:block" />
+          <motion.div
+            className="absolute left-1/2 top-0 hidden w-0.5 -translate-x-1/2 bg-gradient-to-b from-cyan-400/60 to-emerald-400/60 md:block"
+            style={{ height: lineHeight }}
+          />
 
-        <div className="absolute left-4 top-0 h-full w-0.5 bg-white/10 md:hidden" />
-        <motion.div
-          className="absolute left-4 top-0 w-0.5 bg-gradient-to-b from-cyan-400/60 to-emerald-400/60 md:hidden"
-          style={{ height: lineHeight }}
-        />
+          {/* Mobile line */}
+          <div className="absolute left-4 top-0 h-full w-0.5 bg-white/10 md:hidden" />
+          <motion.div
+            className="absolute left-4 top-0 w-0.5 bg-gradient-to-b from-cyan-400/60 to-emerald-400/60 md:hidden"
+            style={{ height: lineHeight }}
+          />
 
-        <div className="flex flex-col gap-12 md:gap-16">
-          {milestones.map((item, index) => {
-            const isLeft = item.side === 'left';
+          <div className="flex flex-col gap-10 md:gap-14">
+            {milestones.map((item, index) => {
+              const isLeft = item.side === 'left';
 
-            return (
-              <div key={item.year} className="relative">
-                <div className="hidden items-center md:flex">
-                  {isLeft ? (
-                    <>
-                      <div className="flex-1">
-                        <Card item={item} style={{ opacity: cardOpacity[index], y: cardY[index] }} />
-                      </div>
-                      <Dot />
-                      <div className="flex flex-1 items-center">
-                        <span className="whitespace-nowrap text-4xl font-black tracking-tight text-white sm:text-5xl">
-                          {item.year}
-                        </span>
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      <div className="flex flex-1 items-center justify-end">
-                        <span className="whitespace-nowrap text-4xl font-black tracking-tight text-white sm:text-5xl">
-                          {item.year}
-                        </span>
-                      </div>
-                      <Dot />
-                      <div className="flex-1">
-                        <Card item={item} style={{ opacity: cardOpacity[index], y: cardY[index] }} />
-                      </div>
-                    </>
-                  )}
-                </div>
-
-                <div className="flex items-start gap-4 md:hidden">
-                  <div className="relative z-10 mt-1 flex shrink-0">
-                    <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#0C0C0C] ring-2 ring-white/40">
-                      <div className="h-2 w-2 rounded-full bg-white/80" />
-                    </div>
+              return (
+                <div key={item.year} className="relative">
+                  {/* Desktop layout */}
+                  <div className="hidden md:grid grid-cols-[1fr_auto_1fr] items-center">
+                    {isLeft ? (
+                      <>
+                        <div className="flex justify-end">
+                          <div className="w-full max-w-xl">
+                            <Card item={item} style={{ opacity: cardOpacity[index], y: cardY[index] }} />
+                          </div>
+                        </div>
+                        <Dot />
+                        <div className="flex items-center pl-6">
+                          <span className="whitespace-nowrap text-4xl font-black tracking-tight text-white sm:text-5xl">
+                            {item.year}
+                          </span>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="flex items-center justify-end pr-6">
+                          <span className="whitespace-nowrap text-4xl font-black tracking-tight text-white sm:text-5xl">
+                            {item.year}
+                          </span>
+                        </div>
+                        <Dot />
+                        <div className="flex justify-start">
+                          <div className="w-full max-w-xl">
+                            <Card item={item} style={{ opacity: cardOpacity[index], y: cardY[index] }} />
+                          </div>
+                        </div>
+                      </>
+                    )}
                   </div>
-                  <Card item={item} style={{ opacity: cardOpacity[index], y: cardY[index] }} />
+
+                  {/* Mobile layout */}
+                  <div className="flex items-start gap-4 md:hidden">
+                    <div className="relative z-10 mt-1 flex shrink-0">
+                      <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#0C0C0C] ring-2 ring-white/40">
+                        <div className="h-2 w-2 rounded-full bg-white/80" />
+                      </div>
+                    </div>
+                    <Card item={item} style={{ opacity: cardOpacity[index], y: cardY[index] }} />
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
@@ -135,17 +143,17 @@ function Card({ item, style }: { item: (typeof milestones)[number]; style?: Reco
   return (
     <motion.div
       style={style}
-      className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 shadow-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.05]"
+      className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 shadow-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.05]"
     >
-      <div className="space-y-1">
-        <p className="text-xs font-black uppercase tracking-[0.3em] text-cyan-400/70">
+      <div className="space-y-1.5">
+        <p className="text-sm font-black uppercase tracking-[0.3em] text-cyan-400/70">
           {item.period}
         </p>
-        <h3 className="text-lg font-bold leading-tight text-[#D7E2EA]">{item.title}</h3>
+        <h3 className="text-xl font-bold leading-tight text-[#D7E2EA]">{item.title}</h3>
         <p className="text-sm font-medium text-[#D7E2EA]/70">{item.subtitle}</p>
-        <div className="flex items-center gap-1.5 pt-1">
-          <GraduationCap size={14} className="text-[#D7E2EA]/50" />
-          <p className="text-xs font-medium text-[#D7E2EA]/50">{item.institution}</p>
+        <div className="flex items-center gap-1.5 pt-1.5">
+          <GraduationCap size={15} className="text-[#D7E2EA]/50" />
+          <p className="text-sm font-medium text-[#D7E2EA]/50">{item.institution}</p>
         </div>
       </div>
     </motion.div>
